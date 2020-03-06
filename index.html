@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text and Image</title>
+	<style>
+		body { 
+		    background-image: radial-gradient(circle, blue, purple, lightpink);
+		}
+
+		.text{width:100%;
+              height: 100%;
+              position: absolute;
+              top: 60%;
+          left: 50%;
+          
+         
+  
+              z-index: 2; 
+              animation-name: spinner;
+   			 animation-timing-function: linear;
+    		animation-iteration-count: infinite;
+    		animation-duration: 6s;
+     	-moz-transform-style: preserve-3d;
+
+		}
+
+
+		.image{width:100%;
+              height: 100%;
+              position: absolute;
+                  top: 60%;
+          left: 50%;
+
+              
+          
+          
+              transform: rotateZ(-380deg);
+              z-index: 1; 
+              opacity:1;  
+    animation: flickerAnimation 6s infinite;
+
+		}
+		@keyframes spinner {
+from {
+      -moz-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+    }
+    to {
+      -moz-transform: rotateY(-360deg);
+      -ms-transform: rotateY(-360deg);
+      transform: rotateY(-360deg);
+    }
+		}
+@keyframes flickerAnimation {
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+   80% { transform: rotate(0deg); }
+   85% { transform: rotate(5deg); }
+   95% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes zoominout {
+    0% {
+        transform: scale(1,1);
+    }
+    50% {
+        transform: scale(1.2,1.2);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+
+@media only screen and (max-width: 940px){
+  .text{width:40%;
+              height: 40%;
+           
+    animation: flickerAnimation 6s infinite;
+  }
+  .image{width:20%;
+              height: 20%;
+             
+               animation: wiggle 2.5s infinite;
+
+  
+}
+body {
+	background-image: radial-gradient(circle, green, blue, orange);
+}
+}
+
+@media only screen and (min-width: 1190px){
+  .text{width:60%;
+              height: 60%;
+           
+     animation: flickerAnimation 6s infinite;
+  }
+  .image{width:40%;
+              height: 40%;
+             
+                 animation: zoominout 1s infinite ;
+
+  
+}
+body {
+	background-image: radial-gradient(circle, yellow, red, lightblue);
+}
+}
+	</style>
+</head>
+<body>
+	<div class="text">
+		<img src="text sphere.png">
+
+	</div>
+<div class="image">
+	<img src="jellyfish.png">
+</div>
+</body>
+</html>
